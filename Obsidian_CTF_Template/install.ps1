@@ -13,7 +13,7 @@ ___________                   .__          __           .___                 __ 
              \/      \/|__|             \/          \/           \/     \/            \/               \/                                                          
 "@
 
-# $ErrorActionPreference = "silentlycontinue"
+$ErrorActionPreference = "silentlycontinue"
 
 Write-Host "Enter Obsidian vault root directory:"
 $root = Read-Host "INSTALL DIR"
@@ -48,7 +48,6 @@ Write-Host "[*] Adding C:\Tools to Path" -ForegroundColor Green
 $env_path = [Environment]::GetEnvironmentVariable("Path", "user")
 $new_env_path = $env_path + ";C:\Tools"
 [Environment]::SetEnvironmentVariable("Path", $new_env_path, "user")
-
 
 Write-Host "[+] Installation complete. Enjoy :)" -ForegroundColor Green
 Write-Host "`n"

@@ -1,10 +1,13 @@
 # Obsidian CTF Template
 # Created by Qurius
 
-$obsidian_path = "asdf"
+$obsidian_path = "C:\Users\patri\Documents\Obsidian\Penetration Testing"
 $CTF_dir = "CTF"
 $ErrorActionPreference= "silentlycontinue"
-$cmd_args = $args
+
+$platform = $args[0]
+$difficulty = $args[1]
+$machine_name = $args[2]
 
 function Show-Help
 {
@@ -24,7 +27,7 @@ function List-Platforms
 
 function Check-Params
 {
-    # Arguments handling #TODO
+    # Arguments handling
 
     if ($cmd_args.count -eq 0)
     {
@@ -38,18 +41,13 @@ function Check-Params
     if ($cmd_args[0] -eq "-h")
     {
         Show-Help
+        exit
     }
 
     if ($cmd_args[0] -eq "-l")
     {
         List-Platforms
-    }
-
-    else 
-    {
-        $platform = cmd_args[0]
-        $difficulty = cmd_args[1]
-        $machine_name = cmd_args[2]
+        exit
     }
 }
 
@@ -77,6 +75,7 @@ function Check-Platform
     else
     {
         Write-Host "Provided platform is not supported!"
+        exit
     }
 
     return $platform
@@ -93,7 +92,7 @@ function Create-DirStruct
 function Create-STDFiles
 {
     $platform = Check-Platform
-    $files = "00 - Credentials", "02 - Nmap", "03 - Enumeration", "04 - Initial Foothold", "05 - Post-Exploitation Enumeration", "06 - Privilege Escalation"
+    $files = "01 - Credentials", "02 - Nmap", "03 - Enumeration", "04 - Initial Foothold", "05 - Post-Exploitation Enumeration", "06 - Privilege Escalation"
 
     # Create support file for the Obsidian graph
     New-Item -ItemType File "$obsidian_path\$CTF_dir\$platform\$difficulty\$machine_name\$machine_name.md" | Out-Null
