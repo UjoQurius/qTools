@@ -1,7 +1,7 @@
 # Obsidian CTF Template
 # Created by Qurius
 
-$obsidian_path = "asdf"
+$obsidian_path = "C:\Users\patri\Documents\Obsidian\Penetration Testing"
 $CTF_dir = "CTF"
 $ErrorActionPreference= "silentlycontinue"
 
