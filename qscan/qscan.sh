@@ -14,7 +14,7 @@ echo "| | (_| |   ____) | (_| (_| | | | | |";
 echo "|  \__, |  |_____/ \___\__,_|_| |_| |";
 echo "|     | |                           |";
 echo "|     |_|                           |";
-echo "|__________________________$(printf ${White})By Qurius$(printf ${IRed})|"
+echo "|__________________________$(printf ${White})by Qurius$(printf ${IRed})|"
 echo ""
 
 printf "${White}"
@@ -78,6 +78,6 @@ then
 	sudo nmap -sC -sV -oN nmap/$boxname.nmap -p $open_ports $host 1>/dev/null
 fi
 
-echo "[+] Scanning of the $boxname machine done"
+echo "[+] Scanning of the $boxname machine complete"
 
 less nmap/$boxname.nmap
