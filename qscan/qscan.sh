@@ -57,7 +57,7 @@ sudo nmap -sS -T4 -p- -oN nmap/$boxname-allports.nmap $host 1>/dev/null
 # Check if -Pn is required
 icmp_err=$(cat nmap/$boxname-allports.nmap | grep "65535 closed")
 
-if [ ! -z $icmp ]
+if [ ! -z $icmp_err ]
 then
 	if [[ $icmp_err = *"65535 closed"* ]]
 	then
