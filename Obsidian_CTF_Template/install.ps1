@@ -38,7 +38,7 @@ Copy-Item .\OBS_add_machine.ps1 C:\Tools\
 
 Write-Host "[*] Creating .bat executable file"-ForegroundColor Green
 
-Set-Content C:\Tools\test.bat "powershell.exe -ep bypass C:\Tools\OBS_add_machine.ps1 %1 %2 %3"
+Set-Content C:\Tools\OBS.bat "powershell.exe -ep bypass C:\Tools\OBS_add_machine.ps1 %1 %2 %3"
 
 Write-Host "[*] Adding C:\Tools to Path" -ForegroundColor Green
 
@@ -46,11 +46,11 @@ $env:Path += ";C:\Tools"
 
 Write-Host "[+] Installation complete. Enjoy :)" -ForegroundColor Green
 
-Write-Host "
+Write-Host @"
 ________               .__              
 \_____  \  __ _________|__|__ __  ______
  /  / \  \|  |  \_  __ \  |  |  \/  ___/
 /   \_/.  \  |  /|  | \/  |  |  /\___ \ 
 \_____\ \_/____/ |__|  |__|____//____  >
        \__>                          \/ 
-"
+"@
