@@ -13,7 +13,7 @@ ___________                   .__          __           .___                 __ 
              \/      \/|__|             \/          \/           \/     \/            \/               \/                                                          
 "@
 
-$ErrorActionPreference = "silentlycontinue"
+# $ErrorActionPreference = "silentlycontinue"
 
 Write-Host "Enter Obsidian vault root directory:"
 $root = Read-Host "INSTALL DIR"
@@ -45,7 +45,10 @@ Set-Content C:\Tools\ctf.bat "powershell.exe -ep bypass C:\Tools\ctf_add_machine
 
 Write-Host "[*] Adding C:\Tools to Path" -ForegroundColor Green
 
-$env:Path += ";C:\Tools"
+$env_path = [Environment]::GetEnvironmentVariable("Path", "user")
+$new_env_path = $env_path + ";C:\Tools"
+[Environment]::SetEnvironmentVariable("Path", $new_env_path, "user")
+
 
 Write-Host "[+] Installation complete. Enjoy :)" -ForegroundColor Green
 Write-Host "`n"
@@ -60,3 +63,5 @@ ________               .__
 \_____\ \_/____/ |__|  |__|____//____  >
        \__>                          \/ 
 "@
+
+Read-Host "Press any key to exit..."
