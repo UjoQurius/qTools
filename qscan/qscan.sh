@@ -19,9 +19,18 @@ echo ""
 
 printf "${White}"
 
+if [ "$1" = "--show" ]
+then
+	nmap_file=$(find . -type f -name "*.nmap" | grep -v "-")
+	less $nmap_file
+	exit
+fi
+
+# Help message
 if [ $# -ne 2 ]
 then
 	echo "Usage: $0 <host ip> <name of the box>"
+	echo "Use --show to see the last qscan output"
 	exit
 fi
 
