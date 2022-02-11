@@ -121,7 +121,7 @@ function Prepare-Files
     # Nmap scans
     $structure = "# TCP`n### Full-port Discovery Scan`n$c$c$c`sql`n`n$c$c$c`n### Selected Ports Script Scan`n$c$c$c`sql`n`n$c$c$c`n# UDP`n$c$c$c`sql`n`n$c$c$c"
 
-    Add-Content "$obsidian_path\$CTF_dir\$platform\$difficulty\$machine_name\00 - Credentials.md" $table
+    Add-Content "$obsidian_path\$CTF_dir\$platform\$difficulty\$machine_name\01 - Credentials.md" $table
     Add-Content "$obsidian_path\$CTF_dir\$platform\$difficulty\$machine_name\02 - Nmap.md" $structure
 }
 
