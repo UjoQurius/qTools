@@ -13,18 +13,21 @@ ___________                   .__          __           .___                 __ 
              \/      \/|__|             \/          \/           \/     \/            \/               \/                                                          
 "@
 
-Write-Host "Enter Obsidian root directory:"
+$ErrorActionPreference = "silentlycontinue"
+
+Write-Host "Enter Obsidian vault root directory:"
 $root = Read-Host "INSTALL DIR"
 
+Write-Host "`n"
 Write-Host "[*] Installing to path: $root" -ForegroundColor Green
 
 $path_var = "obsidian_path = `"*"
 
-foreach ($line in Get-Content .\OBS_add_machine.ps1)
+foreach ($line in Get-Content .\ctf_add_machine.ps1)
 {
     if ($line -match $path_var)
     {
-       (Get-Content .\OBS_add_machine.ps1) -replace [Regex]::Escape("$line"), "`$obsidian_path = `"$root`"" | Set-Content .\OBS_add_machine.ps1
+       (Get-Content .\ctf_add_machine.ps1) -replace [Regex]::Escape("$line"), "`$obsidian_path = `"$root`"" | Set-Content .\ctf_add_machine.ps1
     }
 }
 
@@ -34,17 +37,20 @@ New-Item -Path "c:\" -Name "Tools" -ItemType "directory"
 
 Write-Host "[*] Copying files" -ForegroundColor Green
 
-Copy-Item .\OBS_add_machine.ps1 C:\Tools\
+Copy-Item .\ctf_add_machine.ps1 C:\Tools\
 
-Write-Host "[*] Creating .bat executable file"-ForegroundColor Green
+Write-Host "[*] Creating ctf.bat executable file" -ForegroundColor Green
 
-Set-Content C:\Tools\OBS.bat "powershell.exe -ep bypass C:\Tools\OBS_add_machine.ps1 %1 %2 %3"
+Set-Content C:\Tools\ctf.bat "powershell.exe -ep bypass C:\Tools\ctf_add_machine.ps1 %1 %2 %3"
 
 Write-Host "[*] Adding C:\Tools to Path" -ForegroundColor Green
 
 $env:Path += ";C:\Tools"
 
 Write-Host "[+] Installation complete. Enjoy :)" -ForegroundColor Green
+Write-Host "`n"
+
+Write-Host "Usage: ctf <arguments>"
 
 Write-Host @"
 ________               .__              
