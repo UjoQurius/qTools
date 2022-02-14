@@ -1,0 +1,14 @@
+C:\Tools\ChangeTheme\ChangeTheme\bin\Debug\net6.0\ChangeTheme.exe
+C:\Tools\ChangeTheme\ChangeTheme\bin\Debug\net6.0\ChangeTheme.deps.json
+C:\Tools\ChangeTheme\ChangeTheme\bin\Debug\net6.0\ChangeTheme.runtimeconfig.json
+C:\Tools\ChangeTheme\ChangeTheme\bin\Debug\net6.0\ChangeTheme.dll
+C:\Tools\ChangeTheme\ChangeTheme\bin\Debug\net6.0\ref\ChangeTheme.dll
+C:\Tools\ChangeTheme\ChangeTheme\bin\Debug\net6.0\ChangeTheme.pdb
+C:\Tools\ChangeTheme\ChangeTheme\obj\Debug\net6.0\ChangeTheme.GeneratedMSBuildEditorConfig.editorconfig
+C:\Tools\ChangeTheme\ChangeTheme\obj\Debug\net6.0\ChangeTheme.AssemblyInfoInputs.cache
+C:\Tools\ChangeTheme\ChangeTheme\obj\Debug\net6.0\ChangeTheme.AssemblyInfo.cs
+C:\Tools\ChangeTheme\ChangeTheme\obj\Debug\net6.0\ChangeTheme.csproj.CoreCompileInputs.cache
+C:\Tools\ChangeTheme\ChangeTheme\obj\Debug\net6.0\ChangeTheme.dll
+C:\Tools\ChangeTheme\ChangeTheme\obj\Debug\net6.0\ref\ChangeTheme.dll
+C:\Tools\ChangeTheme\ChangeTheme\obj\Debug\net6.0\ChangeTheme.pdb
+C:\Tools\ChangeTheme\ChangeTheme\obj\Debug\net6.0\ChangeTheme.genruntimeconfig.cache
