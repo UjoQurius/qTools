@@ -54,18 +54,6 @@ echo "[*] Starting the scan"
 echo "[*] Running the full-port scan"
 sudo nmap -sS -T4 -p- -oN nmap/$boxname-allports.nmap $host 1>/dev/null
 
-# Check if -Pn is required
-icmp_err=$(cat nmap/$boxname-allports.nmap | grep "65535 closed")
-
-if [ ! -z $icmp_err ]
-then
-	if [[ $icmp_err = *"65535 closed"* ]]
-	then
-		echo "Trying with -Pn"
-		sudo nmap -sS -T4 -oN nmap/$boxname-allports.nmap $host -Pn 1>/dev/null
-	fi
-fi
-
 # Parsing the nmap full-port scan output
 echo "[*] Parsing the nmap full-port scan output"
 open_ports=$(cat nmap/$boxname-allports.nmap | grep -i 'open' | cut -d '/' -f 1 | sed -z 's/\n/,/g') 1>/dev/null
