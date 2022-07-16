@@ -67,5 +67,3 @@ then
 fi
 
 echo "[+] Scanning of the $boxname machine complete"
-
-less nmap/$boxname.nmap
